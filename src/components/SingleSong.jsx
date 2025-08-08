@@ -9,12 +9,11 @@ function SingleSong({ allSongs }) {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Responsive: dimensioni dinamiche
   const getCardWidth = () => {
-    if (windowWidth >= 1400) return '280px'; // XL screens - 5 cards
-    if (windowWidth >= 1200) return '240px'; // LG screens - 4 cards
-    if (windowWidth >= 992) return '200px'; // MD screens - 3 cards
-    return '180px'; // SM screens - 2 cards
+    if (windowWidth >= 1400) return '280px';
+    if (windowWidth >= 1200) return '240px';
+    if (windowWidth >= 992) return '200px';
+    return '180px';
   };
 
   return (
