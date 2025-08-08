@@ -2,6 +2,7 @@ import { Container } from 'react-bootstrap';
 import FirstCarousel from './FirstCarousel';
 import SecondCarousel from './SecondCarousel';
 import Songs from './Songs';
+import Aside from './Aside';
 
 function Home() {
   return (
@@ -15,6 +16,7 @@ function Home() {
       </h5>
       <SecondCarousel />
       <Songs />
+      <Aside />
     </Container>
   );
 }

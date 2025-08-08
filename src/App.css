@@ -6,3 +6,16 @@ body {
   background-color: #1f1f1f !important;
   color: white !important;
 }
+
+.banner {
+  background-color: #2a2a2a;
+}
+
+.banner h5,
+.banner i {
+  color: #df5262 !important;
+}
+
+.footer {
+  background-color: #323232 !important;
+}
