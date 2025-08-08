@@ -1,4 +1,4 @@
-import { Carousel } from 'react-bootstrap';
+import { useState, useEffect } from 'react';
 import img4 from '../assets/images/2a.png';
 import img5 from '../assets/images/2b.png';
 import img6 from '../assets/images/2c.png';
@@ -7,81 +7,65 @@ import img8 from '../assets/images/2e.png';
 import img9 from '../assets/images/2f.png';
 
 function SecondCarousel() {
+  const [size, setSize] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => setSize(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+  const songs = [
+    { img: img4, title: 'Prólogo con Abuelo' },
+    { img: img5, title: 'The Wanderer' },
+    { img: img6, title: 'Michael Bublé & Carly Pearce' },
+    { img: img7, title: 'Stephan Moccio: Zane Lowe Interview' },
+    { img: img8, title: 'Chart Spotlight: Julia Michaels' },
+    { img: img9, title: 'Karri & Travis Mills' },
+  ];
+  const sizeImage = () => {
+    if (size >= 1400) return '280px';
+    if (size >= 1200) return '240px';
+    if (size >= 992) return '200px';
+    return '180px';
+  };
   return (
-    <>
-      <Carousel interval={null} indicators={false} controls={false}>
-        <Carousel.Item>
-          <div className='d-flex gap-3 mt-3' style={{ overflowX: 'scroll' }}>
-            <div>
-              <img
-                src={img4}
-                alt=''
-                className='rounded'
-                style={{ width: '218px', height: '218px' }}
-              />
-              <p>
-                <small>Prólogo con Abuelo</small>
-              </p>
-            </div>
-            <div>
-              <img
-                src={img5}
-                alt=''
-                className='rounded'
-                style={{ width: '218px', height: '218px' }}
-              />
-              <p>
-                <small>The Wanderer</small>
-              </p>
-            </div>
-            <div>
-              <img
-                src={img6}
-                alt=''
-                className='rounded'
-                style={{ width: '218px', height: '218px' }}
-              />
-              <p>
-                <small>Michael Bublé & Carly Pearce</small>
-              </p>
-            </div>
-            <div>
-              <img
-                src={img7}
-                alt=''
-                className='rounded'
-                style={{ width: '218px', height: '218px' }}
-              />
-              <p>
-                <small>Stephan Moccio: Zane Lowe Interview</small>
-              </p>
-            </div>
-            <div>
-              <img
-                src={img8}
-                alt=''
-                className='rounded'
-                style={{ width: '218px', height: '218px' }}
-              />
-              <p>
-                <small> Chart Spotlight: Julia Michaels</small>
-              </p>
-            </div>
-            <div>
-              <img
-                src={img9}
-                alt=''
-                className='rounded'
-                style={{ width: '218px', height: '218px' }}
-              />
-              <p>
-                <small>Karri & Travis Mills</small>
-              </p>
-            </div>
+    <div className='d-flex gap-3 mt-3' style={{ overflowX: 'auto' }}>
+      {songs.map((data, index) => (
+        <div
+          key={index}
+          style={{
+            width: sizeImage(),
+            minWidth: sizeImage(),
+            flexShrink: 0,
+          }}
+        >
+          <div className='position-relative'>
+            <img
+              src={data.img}
+              alt={data.title}
+              className='rounded w-100'
+              style={{
+                height: sizeImage(),
+                objectFit: 'cover',
+              }}
+            />
           </div>
-        </Carousel.Item>
-      </Carousel>
-    </>
+
+          <p
+            className='mb-1 mt-2'
+            style={{
+              whiteSpace: 'nowrap',
+              overflow: 'hidden',
+              textOverflow: 'ellipsis',
+              fontSize: '14px',
+              fontWeight: '500',
+            }}
+          >
+            {data.title}
+          </p>
+        </div>
+      ))}
+    </div>
   );
 }
 

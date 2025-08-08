@@ -37,12 +37,12 @@ function Songs() {
         Nuove uscite <i className='bi bi-chevron-right'></i>
       </h5>
       <div className='d-flex gap-3 mt-3' style={{ overflowX: 'auto' }}>
-        {songs.slice(0, 5).map((song) => (
+        {songs.slice(0, 7).map((song) => (
           <SingleSong key={song.id} allSongs={song} />
         ))}
       </div>
       <div className='d-flex gap-3 mt-3' style={{ overflowX: 'auto' }}>
-        {songs.slice(5, 10).map((song) => (
+        {songs.slice(7, 14).map((song) => (
           <SingleSong key={song.id} allSongs={song} />
         ))}
       </div>
