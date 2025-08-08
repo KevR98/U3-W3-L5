@@ -3,16 +3,13 @@ import img1 from '../assets/images/1a.png';
 import img2 from '../assets/images/1b.png';
 import img3 from '../assets/images/1c.png';
 
-function FirstCarusel() {
+function FirstCarousel() {
   return (
     <>
-      <div className='border-bottom'>
-        <h1 className='mt-5 text-white fw-bold'>Novità</h1>
-      </div>
       <Carousel interval={null} indicators={false} controls={false}>
         <Carousel.Item>
           <div className='d-flex gap-3 mt-3' style={{ overflowX: 'scroll' }}>
-            <div style={{ minWidth: '400px' }}>
+            <div style={{ minWidth: '550px', maxWidth: '1000px' }}>
               <div className='text-white mb-2'>
                 <p className='text-uppercase small mb-1 text-secondary'>
                   NUOVA STAZIONE RADIO
@@ -27,7 +24,7 @@ function FirstCarusel() {
                 style={{ height: '250px', objectFit: 'cover' }}
               />
             </div>
-            <div style={{ minWidth: '400px' }}>
+            <div style={{ minWidth: '550px', maxWidth: '1000px' }}>
               <div className='text-white mb-2'>
                 <p className='text-uppercase small mb-1 text-secondary'>
                   NUOVA STAZIONE RADIO
@@ -42,7 +39,7 @@ function FirstCarusel() {
                 style={{ height: '250px', objectFit: 'cover' }}
               />
             </div>
-            <div style={{ minWidth: '400px' }}>
+            <div style={{ minWidth: '550px', maxWidth: '1000px' }}>
               <div className='text-white mb-2'>
                 <p className='text-uppercase small mb-1 text-secondary'>
                   NUOVA STAZIONE RADIO
@@ -64,4 +61,4 @@ function FirstCarusel() {
   );
 }
 
-export default FirstCarusel;
+export default FirstCarousel;

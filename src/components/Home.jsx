@@ -1,15 +1,20 @@
 import { Container } from 'react-bootstrap';
-import FirstCarusel from './FirstCarusel';
-import SecondCarusel from './SecondCarusel';
+import FirstCarousel from './FirstCarousel';
+import SecondCarousel from './SecondCarousel';
+import Songs from './Songs';
 
 function Home() {
   return (
     <Container fluid>
-      <FirstCarusel />
+      <div className='border-bottom border-secondary'>
+        <h1 className='mt-5 text-white fw-bold'>Novità</h1>
+      </div>
+      <FirstCarousel />
       <h5 className='mt-5 fw-bold align-center'>
         Nuovi Episodi radio <i className='bi bi-chevron-right'></i>
       </h5>
-      <SecondCarusel />
+      <SecondCarousel />
+      <Songs />
     </Container>
   );
 }

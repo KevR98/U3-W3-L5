@@ -6,7 +6,7 @@ import img7 from '../assets/images/2d.png';
 import img8 from '../assets/images/2e.png';
 import img9 from '../assets/images/2f.png';
 
-function SecondCarusel() {
+function SecondCarousel() {
   return (
     <>
       <Carousel interval={null} indicators={false} controls={false}>
@@ -53,7 +53,7 @@ function SecondCarusel() {
                 style={{ width: '218px', height: '218px' }}
               />
               <p>
-                <small>Stephan Moccio & Zane Lowe</small>
+                <small>Stephan Moccio: Zane Lowe Interview</small>
               </p>
             </div>
             <div>
@@ -64,7 +64,7 @@ function SecondCarusel() {
                 style={{ width: '218px', height: '218px' }}
               />
               <p>
-                <small>Julia Michaels</small>
+                <small> Chart Spotlight: Julia Michaels</small>
               </p>
             </div>
             <div>
@@ -85,4 +85,4 @@ function SecondCarusel() {
   );
 }
 
-export default SecondCarusel;
+export default SecondCarousel;
